@@ -1,0 +1,12 @@
+{
+  "TestData": {
+    "FirstName": "First Name Dummy",
+    "LastName": "Last Name Dummy",
+    "Address": "Test Address Data",
+    "City": "Test City Data",
+    "Province": "Test Address Data",
+    "PostalCode": "12345",
+    "PhoneNumber": "985-835-6213",
+    "Email": "test@email.com"
+  }
+}
