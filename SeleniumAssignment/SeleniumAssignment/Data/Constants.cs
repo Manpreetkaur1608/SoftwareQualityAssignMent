@@ -6,7 +6,7 @@ namespace SeleniumAssignment.Data
 {
     public class Constants
     {
-        public static readonly string _notes = "Notes for testing porpose";
+        public static readonly string _notes = "Notes for testing purpose";
         public static readonly string _email = "first@gmail.com";
         public static readonly string _homePageTitle = "CRUD Example";
 
