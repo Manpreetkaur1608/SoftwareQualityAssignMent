@@ -1,7 +1,7 @@
 {
   "TestData": {
-    "FirstName": "First Name Dummy",
-    "LastName": "Last Name Dummy",
+    "FirstName": "First Name Test Data",
+    "LastName": "Last Name Test Data",
     "Address": "Test Address Data",
     "City": "Test City Data",
     "Province": "Test Address Data",
