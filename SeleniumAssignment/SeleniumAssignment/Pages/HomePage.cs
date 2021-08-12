@@ -21,34 +21,32 @@ namespace SeleniumAssignment.Pages
         IWebElement Notes => Browser._Driver.FindElementTimeout(By.CssSelector("input[placeholder*='Notes']"));
         IWebElement Save => Browser._Driver.FindElementTimeout(By.XPath("//span[text()='Save']"));
         IWebElement Cancel => Browser._Driver.FindElementTimeout(By.XPath("//span[text()='Cancel']"));
-        IWebElement Search => Browser._Driver.FindElementTimeout(SearchButtonSelector);
-
         IWebElement Filter => Browser._Driver.FindElementTimeout(By.CssSelector("[placeholder*='Filter']"));
+        IWebElement ConfirmationPopup => Browser._Driver.FindElementTimeout(DeletConfirmation);
+        By DeletConfirmation = By.CssSelector("mat-dialog-container.mat-dialog-container"); IWebElement PopupDeleteButton => Browser._Driver.FindElementTimeout(By.XPath("//span[text()='Delete']"));
 
-        
         IWebElement RequiredFieldError(string fieldName)
         {
             By errorMessage = By.XPath($"//input[@placeholder='{fieldName}'] /../../.. //mat-error ");
             return Browser._Driver.FindElementTimeout(errorMessage);
         }
-
         IWebElement EditButton(string emailId)
         {
             By editButton = By.XPath($"//mat-cell[text()=' {emailId}']/..//mat-icon[@aria-label='Edit']");
             return Browser._Driver.FindElementTimeout(editButton);
         }
-
-        
-
+        IWebElement DeleteButton(string emailId)
+        {
+            By editButton = By.XPath($"//mat-cell[text()=' {emailId}']/..//mat-icon[@aria-label='Delete']");
+            return Browser._Driver.FindElementTimeout(editButton);
+        }
         By SearchButtonSelector = By.XPath("//input[@type='search']");
         IReadOnlyList<IWebElement> AllRecordEmailColumn => Browser._Driver.FindElementsTimeout(By.CssSelector("mat-cell.mat-column-email"));
-
         IReadOnlyList<IWebElement> AllRecordFirstNameColumn => Browser._Driver.FindElementsTimeout(By.CssSelector("mat-cell.cdk-column-firstName"));
         IReadOnlyList<IWebElement> RecordFieldError => Browser._Driver.FindElementsTimeout(By.CssSelector("[role='alert']"));
-        
+
 
         //Methods
-
         public void AddRecordIconClick()
         {
             AddRecordIcon.Click();
@@ -64,10 +62,12 @@ namespace SeleniumAssignment.Pages
             FirstName.Clear();
             FirstName.SendKeys(firstName);
         }
+
         public void EnterLastName(string lastName)
         {
             LastName.SendKeys(lastName);
         }
+
         public void EnterAddress(string address)
         {
             Address.SendKeys(address);
@@ -77,19 +77,24 @@ namespace SeleniumAssignment.Pages
         {
             City.SendKeys(city);
         }
+
         public void EnterProvince(string province)
         {
             Province.SendKeys(province);
         }
+
         public void EnterPostalCode(string code)
         {
             PostalCode.SendKeys(code);
+            PhoneNumber.Click();
         }
+
         public void EnterPhoneNumber(string phone)
         {
             Browser.ScollToElement(PhoneNumber);
             PhoneNumber.SendKeys(phone);
         }
+
         public void EnterEmail(string email)
         {
             Email.SendKeys(email);
@@ -146,7 +151,7 @@ namespace SeleniumAssignment.Pages
 
         public bool IsRecordFiltered(string emailId)
         {
-            if(AllRecordEmailColumn.Count ==1 && AllRecordEmailColumn.First().Text.Contains(emailId))
+            if (AllRecordEmailColumn.Count == 1 && AllRecordEmailColumn.First().Text.Contains(emailId))
             {
                 return true;
             }
@@ -166,14 +171,40 @@ namespace SeleniumAssignment.Pages
             bool risRecordUpdated = false;
             for (int i = 0; i < AllRecordEmailColumn.Count; i++)
             {
-                if (AllRecordEmailColumn[i].Text.Contains("Updated"))
+                if (AllRecordFirstNameColumn[i].Text.Contains("Updated"))
                 {
                     risRecordUpdated = true;
                     break;
                 }
             }
             return risRecordUpdated;
+        }
 
+        public void DeleteRecordButtonClick(string emailId) // Unique Email Id
+        {
+            DeleteButton(emailId).Click();
+        }
+
+        public bool IsDeleteConfirmationPopuDIsplayed()
+        {
+            Browser._Driver.WaitUntilVisible(DeletConfirmation);
+            return ConfirmationPopup.Displayed;
+        }
+
+        public void PopupDeleteButtonClick()
+        {
+            PopupDeleteButton.Click();
+            Browser._Driver.WaitUntilInvisible(By.XPath("//span[text()='Delete']"));
+        }
+
+        public bool IsFieldErrorDisplayed(string fieldName)
+        {
+            return RequiredFieldError(fieldName).Displayed ? true : false;
+        }
+
+        public bool VerifyTitle(string partialTitle)
+        {
+            return Browser._Driver.Title.Contains(partialTitle);
         }
     }
 }

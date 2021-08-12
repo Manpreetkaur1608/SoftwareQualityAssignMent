@@ -93,11 +93,12 @@
     <Compile Include="Pages\Pages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBase.cs" />
-    <Compile Include="Tests\TC05_EditRecordTest.cs" />
-    <Compile Include="Tests\TC01_MandatoryFieldsTest.cs" />
-    <Compile Include="Tests\TC03_AddRecordTest.cs" />
-    <Compile Include="Tests\TC02_DataValidationTest.cs" />
-    <Compile Include="Tests\TC04_SearchRecordTest.cs" />
+    <Compile Include="Tests\TC04_EditRecordTest.cs" />
+    <Compile Include="Tests\TC01_AddRecordTest.cs" />
+    <Compile Include="Tests\TC02_MandatoryFieldsTest.cs" />
+    <Compile Include="Tests\Multiple_DataValidationTests.cs" />
+    <Compile Include="Tests\TC03_SearchRecordTest.cs" />
+    <Compile Include="Tests\TC05_DeleteRecordTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -105,9 +106,78 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <None Include="WebApplication\.editorconfig" />
+    <None Include="WebApplication\.firebaserc" />
+    <None Include="WebApplication\.firebase\hosting.ZGlzdA.cache" />
+    <None Include="WebApplication\3.1.1" />
+    <None Include="WebApplication\angular.json" />
+    <None Include="WebApplication\dist\main-es2015.js.map" />
+    <None Include="WebApplication\dist\main-es5.js.map" />
+    <None Include="WebApplication\dist\polyfills-es2015.js.map" />
+    <None Include="WebApplication\dist\polyfills-es5.js.map" />
+    <None Include="WebApplication\dist\runtime-es2015.js.map" />
+    <None Include="WebApplication\dist\runtime-es5.js.map" />
+    <None Include="WebApplication\dist\styles-es2015.js.map" />
+    <None Include="WebApplication\dist\styles-es5.js.map" />
+    <None Include="WebApplication\dist\vendor-es2015.js.map" />
+    <None Include="WebApplication\dist\vendor-es5.js.map" />
+    <None Include="WebApplication\e2e\tsconfig.e2e.json" />
+    <None Include="WebApplication\firebase.json" />
+    <None Include="WebApplication\package-lock.json" />
+    <None Include="WebApplication\package.json" />
+    <None Include="WebApplication\README.md" />
+    <None Include="WebApplication\src\assets\.gitkeep" />
+    <None Include="WebApplication\src\styles.scss" />
+    <None Include="WebApplication\src\tsconfig.app.json" />
+    <None Include="WebApplication\src\tsconfig.spec.json" />
+    <None Include="WebApplication\tsconfig.json" />
+    <None Include="WebApplication\tslint.json" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="WebApplication\.gitignore" />
+    <Content Include="WebApplication\dist\favicon.ico" />
+    <Content Include="WebApplication\dist\index.html" />
+    <Content Include="WebApplication\dist\main-es2015.js" />
+    <Content Include="WebApplication\dist\main-es5.js" />
+    <Content Include="WebApplication\dist\polyfills-es2015.js" />
+    <Content Include="WebApplication\dist\polyfills-es5.js" />
+    <Content Include="WebApplication\dist\runtime-es2015.js" />
+    <Content Include="WebApplication\dist\runtime-es5.js" />
+    <Content Include="WebApplication\dist\styles-es2015.js" />
+    <Content Include="WebApplication\dist\styles-es5.js" />
+    <Content Include="WebApplication\dist\vendor-es2015.js" />
+    <Content Include="WebApplication\dist\vendor-es5.js" />
+    <Content Include="WebApplication\karma.conf.js" />
+    <Content Include="WebApplication\protractor.conf.js" />
+    <Content Include="WebApplication\src\app\app.component.css" />
+    <Content Include="WebApplication\src\app\app.component.html" />
+    <Content Include="WebApplication\src\app\dialogs\add\add.dialog.css" />
+    <Content Include="WebApplication\src\app\dialogs\add\add.dialog.html" />
+    <Content Include="WebApplication\src\app\dialogs\delete\delete.dialog.css" />
+    <Content Include="WebApplication\src\app\dialogs\delete\delete.dialog.html" />
+    <Content Include="WebApplication\src\app\dialogs\edit\edit.dialog.css" />
+    <Content Include="WebApplication\src\app\dialogs\edit\edit.dialog.html" />
+    <Content Include="WebApplication\src\favicon.ico" />
+    <Content Include="WebApplication\src\index.html" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="WebApplication\" />
+    <TypeScriptCompile Include="WebApplication\e2e\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="WebApplication\e2e\app.po.ts" />
+    <TypeScriptCompile Include="WebApplication\src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="WebApplication\src\app\app.component.ts" />
+    <TypeScriptCompile Include="WebApplication\src\app\app.module.ts" />
+    <TypeScriptCompile Include="WebApplication\src\app\dialogs\add\add.dialog.component.ts" />
+    <TypeScriptCompile Include="WebApplication\src\app\dialogs\delete\delete.dialog.component.ts" />
+    <TypeScriptCompile Include="WebApplication\src\app\dialogs\edit\edit.dialog.component.ts" />
+    <TypeScriptCompile Include="WebApplication\src\app\models\issue.ts" />
+    <TypeScriptCompile Include="WebApplication\src\app\services\data.service.ts" />
+    <TypeScriptCompile Include="WebApplication\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="WebApplication\src\environments\environment.ts" />
+    <TypeScriptCompile Include="WebApplication\src\main.ts" />
+    <TypeScriptCompile Include="WebApplication\src\polyfills.ts" />
+    <TypeScriptCompile Include="WebApplication\src\test.ts" />
+    <TypeScriptCompile Include="WebApplication\src\typings.d.ts" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

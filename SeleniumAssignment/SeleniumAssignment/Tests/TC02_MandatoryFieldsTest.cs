@@ -1,18 +1,13 @@
 ﻿using NUnit.Framework;
 using SeleniumAssignment.Data;
 using SeleniumAssignment.Pages;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SeleniumAssignment.Tests
 {
     [TestFixture]
     [Category("Mandatory")]
     [Property("Priority", 1)]
-    public class TC03_AddRecordTest : TestBase
+    public class TC02_MandatoryFieldsTest : TestBase
     {
         [OneTimeSetUp]
         public void OneTimeSetup()

@@ -11,8 +11,8 @@ namespace SeleniumAssignment.Tests
 {
     [TestFixture]
     [Category("EditRecord")]
-    [Property("Priority", 1)]
-    class TC05_EditRecordTest : TestBase
+    [Property("Priority", 2)]
+    class TC04_EditRecordTest : TestBase
     {
         [OneTimeSetUp]
         public void OneTimeSetup()
@@ -30,7 +30,7 @@ namespace SeleniumAssignment.Tests
             //Search Record Based on Email Id
             Page.HomePage.EditRecord(Constants._email);
             Assert.IsTrue(Page.HomePage.ISAddNewRecordPopupDisplayed(), "Add New Record Popup Displayed");
-            Page.HomePage.EnterFirstName(Constants.RandomName("First Name : Updated")); //Updated First Name
+            Page.HomePage.EnterFirstName(Constants.RandomName("First Name : Updated ")); //Updated First Name
             Page.HomePage.EnterNotes(Constants._notes);
             Page.HomePage.SubmitButtonClick();
             Assert.IsTrue(Page.HomePage.VerifyFirstNameUpdated(), "First Name Updated Successfully");

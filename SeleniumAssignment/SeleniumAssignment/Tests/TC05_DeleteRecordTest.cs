@@ -1,14 +1,9 @@
-﻿
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using SeleniumAssignment.Data;
 using SeleniumAssignment.Pages;
-
 namespace SeleniumAssignment.Tests
 {
-    [TestFixture]
-    [Category("SearchRecord")]
-    [Property("Priority", 1)]
-    class TC04_SearchRecordTest : TestBase
+    class TC05_DeleteRecordTest : TestBase
     {
         [OneTimeSetUp]
         public void OneTimeSetup()
@@ -21,12 +16,13 @@ namespace SeleniumAssignment.Tests
         }
 
         [Test, Order(1)]
-        public void VerifySearchRecordTest()
+        public void VerifyDeleteRecordTest()
         {
-            //Search Record Based on Email Id (It's unique)
-            Page.HomePage.EditRecord(AssignmentData._Data.TestData.Email);
-            Assert.IsTrue(Page.HomePage.IsRecordFiltered(AssignmentData._Data.TestData.Email), "Searched Record Successfully filtered");
+            //Search Record Based on Unique Email Id
+            Page.HomePage.DeleteRecordButtonClick(Constants._email);
+            Assert.IsTrue(Page.HomePage.IsDeleteConfirmationPopuDIsplayed(), "Confirmation Popup Displayed");
+            Page.HomePage.PopupDeleteButtonClick();
+            Assert.IsFalse(Page.HomePage.VerifySavedRecordInGrid(Constants._email), "Record Deleted Successfully");
         }
-
     }
 }

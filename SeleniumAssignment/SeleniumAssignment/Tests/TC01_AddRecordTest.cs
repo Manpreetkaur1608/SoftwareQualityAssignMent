@@ -1,14 +1,13 @@
 ﻿using NUnit.Framework;
 using SeleniumAssignment.Data;
 using SeleniumAssignment.Pages;
-using System.Threading;
 
 namespace SeleniumAssignment.Tests
 {
     [TestFixture]
     [Category("SaveRecord")]
     [Property("Priority", 1)]
-    public class TC01_MandatoryFieldsTest : TestBase
+    public class TC01_AddRecordTest : TestBase
     {
         [OneTimeSetUp]
         public void OneTimeSetup()

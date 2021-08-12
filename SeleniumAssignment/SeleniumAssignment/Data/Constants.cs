@@ -7,7 +7,8 @@ namespace SeleniumAssignment.Data
     public class Constants
     {
         public static readonly string _notes = "Notes for testing porpose";
-        public static readonly string _email = "prnvkmr954@gmail.com";
+        public static readonly string _email = "first@gmail.com";
+        public static readonly string _homePageTitle = "CRUD Example";
 
 
         // Instantiate random number generator.  

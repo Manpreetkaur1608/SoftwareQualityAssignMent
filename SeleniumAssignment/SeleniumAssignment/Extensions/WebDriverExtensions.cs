@@ -33,27 +33,6 @@ namespace SeleniumAssignment
             return driver.FindElements(by);
         }
 
-        public static bool WaitforTextToContain(this IWebDriver driver, string match, By by = null, int timeoutInSeconds = 60)
-        {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
-            return wait.Until((d) =>
-            {
-                try
-                {
-                    return d.FindElement(by).Text.Contains(match);
-                }
-                catch (StaleElementReferenceException)
-                {
-                    return false;
-                }
-            });
-        }
-
-        public static void WaitUntilElementClickable(this IWebDriver driver, By by, int timeoutInSeconds = 10)
-        {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(by));
-        }
         public static void WaitUntilElementClickable(this IWebDriver driver, IWebElement element, int timeoutInSeconds = 20)
         {
             new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds)).Until(d =>
